@@ -11,17 +11,6 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lkotlarenko/Task-Manager-App.git"
-  },
-  "keywords": [],
-  "author": "lkotlarenko",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/lkotlarenko/Task-Manager-App/issues"
-  },
-  "homepage": "https://github.com/lkotlarenko/Task-Manager-App#readme",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
