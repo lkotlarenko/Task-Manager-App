@@ -4,6 +4,7 @@
   "description": "Simple CRUD to to manage tasks",
   "main": "index.js",
   "scripts": {
+    "db:restore": "tsc && node ./build/utils/defaultDb.js",
     "start": "npm run build && node ./build/index.js",
     "build": "tsc",
     "dev": "nodemon --watch \"./src/**\" --ext \"ts,js\" --ignore \"src/**/*.spec.ts,src/**/*.json\" --exec \"ts-node src/index.ts\"",
