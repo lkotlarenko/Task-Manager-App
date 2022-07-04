@@ -1,0 +1,49 @@
+version: '3.9'
+
+services:
+  backend:
+    build: ./backend
+    container_name: 'app_backend'
+    platform: linux/amd64
+    ports:
+      - ${BACKEND_PORT}:3001
+    volumes:
+      - ./backend:/app/back
+    environment:
+      - PORT=${BACKEND_PORT}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_HOST=dataDb
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_PORT=${MYSQL_PORT}
+    healthcheck:
+      test: ["CMD", "lsof", "-t", "-i:3001"]
+      timeout: 10s
+      retries: 5
+    depends_on:
+      dataDb:
+        condition: service_healthy
+
+  frontend:
+    build: ./frontend
+    container_name: 'app_frontend'
+    platform: linux/amd64
+    ports:
+      - ${PORT}:3000
+    command: npm start
+
+  dataDb:
+    image: mysql:8.0.21
+    container_name: "mysql_db"
+    platform: linux/amd64
+    ports:
+      - ${MYSQL_PORT}:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
+    restart: 'always'
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"] # wait for db
+      timeout: 10s
+      retries: 5
+    cap_add:
+      - SYS_NICE # omit less alerts
