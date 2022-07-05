@@ -1,8 +1,11 @@
 <!-- readme adapted/inspired from @SamuelDAlencar -->
 # Ebyrt Task Manager
 
-Task manager allows users to view all tasks in the database, update the current state between 'done, pending or ongoing', add a new one, or delete an existing one.
-(option to edit/remove tasks to be implemented).
+This app manages tasks stored on a MySQL database, using the react client users can: 
+- Create a new task (with status of 'done, pending or ongoing')
+- View all tasks in the database
+- *WIP* Update tasks 
+- *WIP* Delete tasks
 
 # Stacks used
 
