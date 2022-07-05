@@ -30,6 +30,8 @@ services:
     platform: linux/amd64
     ports:
       - ${PORT}:3000
+    volumes:
+      - ./frontend:/app/front
     command: npm start
 
   dataDb:
