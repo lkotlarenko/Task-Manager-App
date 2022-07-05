@@ -36,8 +36,19 @@ const editTask = async (req: Request, res: Response, next: NextFunction) => {
   }
 };
 
+const removeTask = async (req: Request, res: Response, next: NextFunction) => {
+  const { id } = req.body;
+  try {
+    await taskService.removeTask(id);
+    return res.status(httpCode.OK).json({message: 'Task removed'});
+  } catch (err) {
+    next(err);
+  }
+};
+
 export default {
   getAll,
   newTask,
   editTask,
+  removeTask,
 };
