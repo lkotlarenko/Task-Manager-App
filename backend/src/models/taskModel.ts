@@ -20,7 +20,16 @@ const newTask = async (data: ITask): Promise<ITask> => {
   return newTask;
 }
 
+const editTask = async (data: ITask): Promise<ITask> => {
+  const { id, task, taskStatus } = data;
+  const query = 'UPDATE TasksDB.Tasks SET task = ?, taskStatus = ? WHERE (id = ?)';
+  await connection.execute<ResultSetHeader>(query, [task, taskStatus, id]);
+  const newTask = { id, task, taskStatus };
+  return newTask;
+}
+
 export default {
   getAll,
   newTask,
+  editTask,
 };
