@@ -1,4 +1,4 @@
-<!-- readme adapted/inspired from @SamuelDAlencar -->;
+<!-- readme adapted/inspired from @SamuelDAlencar -->
 # Ebyrt Task Manager
 
 Task manager allows users to view all tasks in the database, update the current state between 'done, pending or ongoing', add a new one, or delete an existing one.
