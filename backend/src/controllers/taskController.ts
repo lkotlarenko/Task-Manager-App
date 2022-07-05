@@ -24,7 +24,22 @@ const newTask = async (req: Request, res: Response, next: NextFunction) => {
   }
 };
 
+const editTask = async (req: Request, res: Response, next: NextFunction) => {
+  const { id } = req.params;
+  const { task, taskStatus }: ITask = req.body;
+  const taskData = { id, task, taskStatus };
+  try {
+    const updatedTask = await taskService.editTask(taskData);
+    return res.status(httpCode.OK).json(updatedTask);
+  } catch (err) {
+    console.error(err);
+    
+    next(err);
+  }
+};
+
 export default {
   getAll,
   newTask,
+  editTask,
 };
