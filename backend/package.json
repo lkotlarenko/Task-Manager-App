@@ -1,0 +1,47 @@
+{
+  "name": "task-manager-app-back",
+  "version": "1.0.0",
+  "description": "Simple CRUD to to manage tasks",
+  "main": "index.js",
+  "scripts": {
+    "db:restore": "tsc && node ./build/utils/defaultDb.js",
+    "start": "npm run build && node ./build/index.js",
+    "build": "tsc",
+    "dev": "nodemon --watch \"./src/**\" --ext \"ts,js\" --ignore \"src/**/*.spec.ts,src/**/*.json\" --exec \"ts-node src/index.ts\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lkotlarenko/Task-Manager-App.git"
+  },
+  "keywords": [],
+  "author": "lkotlarenko",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/lkotlarenko/Task-Manager-App/issues"
+  },
+  "homepage": "https://github.com/lkotlarenko/Task-Manager-App#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "http-status-codes": "^2.2.0",
+    "joi": "^17.6.0",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.30.4",
+    "@typescript-eslint/parser": "^5.30.4",
+    "cypress": "^10.3.0",
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "mocha": "^10.0.0",
+    "nodemon": "^2.0.18",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.7.4"
+  }
+}
