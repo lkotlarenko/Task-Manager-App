@@ -28,7 +28,7 @@ VALUES
 INSERT INTO
   TasksDB.StatusTypes (type)
 VALUES
-  ("canceled");
+  ("pending");
 
 INSERT INTO
   TasksDB.Tasks (task, taskStatus)
