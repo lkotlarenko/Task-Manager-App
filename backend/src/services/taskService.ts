@@ -11,7 +11,13 @@ const newTask = async (data: ITask): Promise<ITask> => {
   return addTask;
 }
 
+const editTask = async (data: ITask): Promise<ITask> => {
+  const updatedTask = await taskModel.editTask(data);
+  return updatedTask;
+}
+
 export default {
   getAll,
   newTask,
+  editTask,
 };
