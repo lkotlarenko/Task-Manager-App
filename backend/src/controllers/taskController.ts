@@ -32,8 +32,6 @@ const editTask = async (req: Request, res: Response, next: NextFunction) => {
     const updatedTask = await taskService.editTask(taskData);
     return res.status(httpCode.OK).json(updatedTask);
   } catch (err) {
-    console.error(err);
-    
     next(err);
   }
 };
