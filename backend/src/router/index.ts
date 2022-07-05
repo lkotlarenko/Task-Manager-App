@@ -6,5 +6,6 @@ const router = Router();
 
 router.get('/tasks', taskController.getAll);
 router.post('/create', taskValidator, taskController.newTask)
+router.put('/tasks/:id', taskValidator, taskController.editTask)
 
 export default router;
