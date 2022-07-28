@@ -1,7 +1,7 @@
 <!-- readme adapted/inspired from @SamuelDAlencar -->
 # Ebyrt Task Manager
 
-This app manages tasks stored on a MySQL database, using the react client users can: 
+This app manages tasks stored on a MySQL database. Using the react client, users can: 
 - Create a new task (with status of 'done, pending or ongoing')
 - View all tasks in the database
 - *WIP* Update tasks 
